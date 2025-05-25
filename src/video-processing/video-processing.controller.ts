@@ -17,7 +17,6 @@ export class VideoProcessingController {
   @Post('upload')
   @UseInterceptors(FileInterceptor('video'))
   async uploadVideo(@UploadedFile() file: Express.Multer.File) {
-    // console.log(file);
     return this.videoProcessingService.processVideo(file);
   }
   @Get('/')

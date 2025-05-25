@@ -11,8 +11,6 @@ export class PythonApiService {
 
   async transcribe(filePath: string): Promise<string> {
     try {
-      console.log('Transcribing file:', filePath);
-
       // Check if file exists
       if (!fs.existsSync(filePath)) {
         throw new HttpException('File not found', HttpStatus.NOT_FOUND);

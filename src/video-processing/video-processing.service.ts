@@ -51,15 +51,13 @@ export class VideoProcessingService {
           await execAsync(
             `ffmpeg -i "${videoPath}" -ss ${startTime} -t ${endTime - startTime} -c:v copy -c:a copy "${chunkPath}"`,
           );
-          console.log(chunkPath, '6th');
         } catch (error) {
-          console.log(error, '7th');
+          console.error('Error extracting chunk:', error);
         }
 
         try {
           const transcriptionResult =
             await this.pythonApiService.transcribe(chunkPath);
-          console.log(transcriptionResult, '8th');
           const mcqs =
             await this.pythonApiService.generateMcqs(transcriptionResult);
 
