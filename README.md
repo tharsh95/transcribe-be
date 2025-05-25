@@ -10,8 +10,8 @@ Follow the steps below to set up and run the project locally.
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/tharsh95/transcribe-be.git
+   cd transcribe-be
    ```
 2. **Install Dependencies**
     ```bash
